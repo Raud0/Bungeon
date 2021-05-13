@@ -1,0 +1,80 @@
+﻿@startuml
+
+'Customization
+skinparam nodesep 25
+skinparam ranksep 50
+
+
+'World Generation and Loading
+class ChunkLoader {
++ Dictionary<Vector2Int, Chunk> chunks
++ void HandlePlayerMoved(Vector3 position)
+}
+
+class Director {
++ ConstructRoom(Builder builder)
++ ConstructTunnel(Builder builder)
+}
+
+interface IBuilder {
++ BuildWall(int x, int y)
++ BuildFloor(int x, int y)
+}
+
+class ChunkBuilder {
+- Chunk _chunk
++ IntrinsicTileState WallState
++ IntrinsicTileState FloorState
++ BuildWall(int x, int y)
++ BuildFloor(int x, int y)
++ GetResult() : Chunk
+}
+
+class Chunk {
+- Dictionary<Vector2Int, IntrinsicTileState> _tileStates
+- bool _isLoaded
++ Load()
++ Unload()
+}
+
+class Tile {
++ IntrinsicTileState tileState
+}
+
+class IntrinsicTileState {
++ Texture texture
++ Mesh mesh
++ bool Walkable
+}
+
+class TileFactory {
++ CreateTile(IntrinsicTileState tileState): Tile
+}
+
+'Player and Movement
+class Person {
+- _location
+- _viewArea
+}
+
+class Movement {
+- Person _activePerson
+- List<Person> persons
++ Action personMoved
+}
+
+'Lines
+Movement --> Person
+Movement --> ChunkLoader
+ChunkLoader --> Director
+Director --> IBuilder
+IBuilder <|-- ChunkBuilder
+Chunk ..> ChunkBuilder
+ChunkLoader o-- Chunk
+Chunk --> TileFactory
+TileFactory ..> Tile
+Chunk o-- Tile
+IntrinsicTileState "1" *-- "many" Tile : contains
+ChunkBuilder --> ChunkLoader
+
+@enduml
