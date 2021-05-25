@@ -8,16 +8,17 @@ public class ChunkLoader : MonoBehaviour
 {
     private Director _roomDirector;
     private Director _tunnelDirector;
-    private ChunkBuilder _builder;
     private Dictionary<Vector2Int, Chunk> _chunks;
     private Vector2Int centralCoords;
 
     private void Awake()
     {
-        _builder = new ChunkBuilder();
         _roomDirector = new RoomDirector();
-        _tunnelDirector = new TunnelDirector(); 
+        _tunnelDirector = new TunnelDirector();
+        _chunks = new Dictionary<Vector2Int, Chunk>();
 
+        centralCoords = new Vector2Int(-999999999, -999999999);
+        
         Events.PersonMoved += OnPersonMoved;
         Events.PersonSelected += OnPersonSelected;
     }
@@ -43,12 +44,12 @@ public class ChunkLoader : MonoBehaviour
             default: director = _roomDirector; break;
         }
 
-        director.Construct(_builder);
-        Chunk chunk = _builder.GetResult();
+        director.Construct(ChunkBuilder.Instance);
+        Chunk chunk = ChunkBuilder.Instance.GetResult();
         
         var transform1 = chunk.transform;
         transform1.parent = transform;
-        transform1.localPosition = new Vector3(coords.x, coords.y, 0);
+        transform1.localPosition = new Vector3(coords.x*10, coords.y*10, -1);
 
         return chunk;
     }
@@ -57,7 +58,7 @@ public class ChunkLoader : MonoBehaviour
     {
         for (int x = -range; x <= range; x++)
         {
-            for (int y = range; y <= range; y++)
+            for (int y = -range; y <= range; y++)
             {
                 Vector2Int coordsPointer = coords + new Vector2Int(x, y);
                 if (!_chunks.ContainsKey(coordsPointer))
@@ -73,13 +74,15 @@ public class ChunkLoader : MonoBehaviour
     {
         for (int x = -range - 1; x <= range + 1; x++)
         {
-            for (int y = range - 1; y <= range + 1; y++)
+            for (int y = -range - 1; y <= range + 1; y++)
             {
-                if (x >= range && x <= range) continue;
-                if (y >= range && x <= range) continue;
+                if (y >= -range && y <= range && x >= -range && x <= range) continue;
 
                 Vector2Int coordsPointer = coords + new Vector2Int(x, y);
-                if (_chunks.ContainsKey(coordsPointer)) _chunks[coordsPointer].Unload();
+                if (_chunks.ContainsKey(coordsPointer))
+                {
+                    _chunks[coordsPointer].Unload();
+                }
             }
         }
     }
@@ -87,22 +90,19 @@ public class ChunkLoader : MonoBehaviour
     public void OnPersonMoved(Vector3 position)
     {
         Vector2Int coords = CoordsOfPosition(position);
-        if (centralCoords != null && centralCoords != coords) return;
+        
+        
+        if (centralCoords.Equals(coords)) return;
         
         centralCoords = coords;
         DoUnLoading(coords, 1);
         DoLoading(coords, 1);
     }
-
-    public void OnPersonSwitch(Vector3 position) {
-        Vector2Int coords = CoordsOfPosition(position);
-        DoLoading(coords, 1);
-    }
-
-    public void OnPersonSelected(Person person)
+    
+    private void OnPersonSelected(Person person)
     {
         Vector2Int coords = CoordsOfPosition(person.transform.position);
-        if (centralCoords != coords) return;
+        if (centralCoords.Equals(coords) ) return;
         
         centralCoords = coords;
         DoLoading(coords, 1);

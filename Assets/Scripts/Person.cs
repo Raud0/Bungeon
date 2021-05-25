@@ -14,7 +14,7 @@ public class Person : MonoBehaviour
 
     private bool IsPositionWalkable(Vector3 pos)
     {
-        return true;
+        return !Physics2D.OverlapPoint(pos);
     }
 
     private bool Move(Vector3 direction)

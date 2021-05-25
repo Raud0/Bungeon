@@ -23,6 +23,8 @@ public class Chunk : MonoBehaviour
             tile.transform.parent = transform;
             tile.transform.localPosition = new Vector3(entry.Key.x, entry.Key.y, 0);
         }
+
+        _isLoaded = true;
     }
 
     public void Unload()
@@ -31,6 +33,8 @@ public class Chunk : MonoBehaviour
         foreach (Transform child in transform) {
             Destroy(child.gameObject);
         }
+
+        _isLoaded = false;
     }
 
     public void AddTile(Vector2Int key, IntrinsicTileState state)

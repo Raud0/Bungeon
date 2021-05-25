@@ -9,13 +9,12 @@ public class Tile : MonoBehaviour
     {
         _tileState = tileState;
 
-        if (_tileState.walkable)
-        {
-            gameObject.AddComponent<Collider2D>();
-        }
+         if (!_tileState.walkable){
+             gameObject.AddComponent<BoxCollider2D>();
+         }
         
-        SpriteRenderer spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
-        spriteRenderer.sprite = _tileState.sprite;
+         SpriteRenderer spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+         spriteRenderer.sprite = _tileState.sprite;
     }
 
     public bool IsWalkable()

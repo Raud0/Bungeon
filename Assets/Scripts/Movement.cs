@@ -20,27 +20,31 @@ public class Movement : MonoBehaviour
             Destroy(gameObject);
         } else {
             _instance = this;
+            _persons = new List<Person>();
         }
+
     }
 
 
     private void Start()
     {
-        _persons.Add(Instantiate(_personPrefab, new Vector3(0f, 0f, 1f), Quaternion.identity).GetComponent<Person>());
-        _persons.Add(Instantiate(_personPrefab, new Vector3(0f, 50f, 1f), Quaternion.identity).GetComponent<Person>());
+        _persons.Add(Instantiate(_personPrefab, new Vector3(5f, 5f, 1f), Quaternion.identity).GetComponent<Person>());
+        _persons.Add(Instantiate(_personPrefab, new Vector3(5f, 55f, 1f), Quaternion.identity).GetComponent<Person>());
 
         _activePerson = _persons[0];
+        Move(new Vector3(transform.position.x, transform.position.y));
+
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A)) //Left
         {
-            Move(new Vector3(-1f,0f));
+            Move(new Vector3(1f,0f));
         }
         else if (Input.GetKeyDown(KeyCode.D)) //Right
         {
-            Move(new Vector3(1f,0f));
+            Move(new Vector3(-1f,0f));
         }
         else if (Input.GetKeyDown(KeyCode.W)) //Up
         {
@@ -58,7 +62,11 @@ public class Movement : MonoBehaviour
 
     private void Move(Vector3 position)
     {
-        if (_activePerson.Walk(position)) Events.MovePerson(_activePerson.transform.position);
+        if (_activePerson.Walk(position))
+        {
+            Events.MovePerson(_activePerson.transform.position);
+            MoveCameraToPlayer();
+        }
     }
 
     private void ChangePerson()
@@ -67,9 +75,17 @@ public class Movement : MonoBehaviour
         int i = _persons.IndexOf(_activePerson);
         Person _nextActive = _persons[(i + 1) % _persons.Count];
         if (_nextActive.Equals(_activePerson)) return;
-
+        
         _activePerson = _nextActive;
         Events.SelectPerson(_activePerson);
+        MoveCameraToPlayer();
+    }
+
+
+    private void MoveCameraToPlayer()
+    {
+        Vector3 cameraPos = new Vector3(_activePerson.transform.position.x, _activePerson.transform.position.y, 50);
+        Camera.main.transform.position = cameraPos;
     }
 
 }

@@ -2,30 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="350583a6-74a4-4ee0-bf45-264ee89444f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/BoomerScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/BoomerScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Events.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Events.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/floor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/floor.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/man.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/man.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/wall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/wall.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bungeon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Other/builder.puml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Other/builder.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BoomerScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BoomerScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChunkBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChunkLoader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Director.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Director.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IntrinsicTileState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IntrinsicTileState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Person.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Person.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RoomDirector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RoomDirector.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TileFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TileFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TunnelDirector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TunnelDirector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/floor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/floor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/man.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/man.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/wall.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/wall.png.meta" afterDir="false" />
     </list>
-    <list id="8dfc39a8-c472-474c-bbef-572a5490ff04" name="Raud0's changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChunkLoader.cs" afterDir="false" />
-    </list>
+    <list id="8dfc39a8-c472-474c-bbef-572a5490ff04" name="Raud0's changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,19 +50,20 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Builder.cs" />
       <option value="$PROJECT_DIR$/.gitignore" />
-      <option value="$PROJECT_DIR$/Assets/Other/builder.puml" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/TileFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Events.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/IntrinsicTileState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/IBuilder.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Director.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/RoomDirector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/TunnelDirector.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChunkBuilder.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Person.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/RoomDirector.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Director.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tile.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/TileFactory.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/TunnelDirector.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Events.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Movement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChunkLoader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tile.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Person.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Movement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Other/builder.puml" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sU3eKRlniMcnexkadjkr1VBNbv" />
@@ -80,6 +78,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -126,7 +125,7 @@
       <workItem from="1620934342632" duration="2580000" />
       <workItem from="1621964495525" duration="24000" />
       <workItem from="1621964540209" duration="2986000" />
-      <workItem from="1621968364838" duration="654000" />
+      <workItem from="1621968364838" duration="4405000" />
     </task>
     <servers />
   </component>

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TunnelDirector : Director
 {
-    public override void Construct(IBuilder builder)
+    public override void Construct(ChunkBuilder builder)
     {
         for (int x = 0; x < 10; x++)
         {
