@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +17,9 @@ public class ChunkLoader : MonoBehaviour
         _builder = new ChunkBuilder();
         _roomDirector = new RoomDirector();
         _tunnelDirector = new TunnelDirector(); 
+
+        Events.PersonMoved += OnPersonMoved;
+        Events.PersonSelected += OnPersonSelected;
     }
 
     private Vector2Int CoordsOfPosition(Vector3 position)
@@ -30,19 +33,27 @@ public class ChunkLoader : MonoBehaviour
         return new Vector2Int(ix, iy);
     }
 
-    private void ConstructChunk(Vector2Int coords)
+    private Chunk ConstructChunk(Vector2Int coords)
     {
         Director director = null;
         switch (Random.Range(0,2))
         {
-            case 0: director = _roomDirector; break
+            case 0: director = _roomDirector; break;
             case 1: director = _tunnelDirector; break;
+            default: director = _roomDirector; break;
         }
 
-        Chunk newChunk = director.Construct(_builder);
+        director.Construct(_builder);
+        Chunk chunk = _builder.GetResult();
+        
+        var transform1 = chunk.transform;
+        transform1.parent = transform;
+        transform1.localPosition = new Vector3(coords.x, coords.y, 0);
+
+        return chunk;
     }
     
-    private void DoLoading(Vector2Int coords)
+    private void DoLoading(Vector2Int coords, int range)
     {
         for (int x = -range; x <= range; x++)
         {
@@ -51,7 +62,7 @@ public class ChunkLoader : MonoBehaviour
                 Vector2Int coordsPointer = coords + new Vector2Int(x, y);
                 if (!_chunks.ContainsKey(coordsPointer))
                 {
-                    ConstructChunk(coordsPointer);
+                    _chunks.Add(coordsPointer, ConstructChunk(coordsPointer));
                 }
                 _chunks[coordsPointer].Load();
             }
@@ -73,18 +84,27 @@ public class ChunkLoader : MonoBehaviour
         }
     }
     
-    public void OnPlayerMove(Vector3 position)
+    public void OnPersonMoved(Vector3 position)
     {
         Vector2Int coords = CoordsOfPosition(position);
         if (centralCoords != null && centralCoords != coords) return;
         
         centralCoords = coords;
         DoUnLoading(coords, 1);
-        DoLoading(coords);
+        DoLoading(coords, 1);
     }
 
-    public void OnPersonSwitch()
+    public void OnPersonSwitch(Vector3 position) {
+        Vector2Int coords = CoordsOfPosition(position);
+        DoLoading(coords, 1);
+    }
+
+    public void OnPersonSelected(Person person)
     {
+        Vector2Int coords = CoordsOfPosition(person.transform.position);
+        if (centralCoords != coords) return;
         
+        centralCoords = coords;
+        DoLoading(coords, 1);
     }
 }

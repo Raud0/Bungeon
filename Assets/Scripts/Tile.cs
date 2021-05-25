@@ -13,7 +13,7 @@ public class Tile : MonoBehaviour
         {
             gameObject.AddComponent<Collider2D>();
         }
-
+        
         SpriteRenderer spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = _tileState.sprite;
     }

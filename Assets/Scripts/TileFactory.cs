@@ -23,7 +23,7 @@ public class TileFactory : MonoBehaviour
         GameObject go = new GameObject();
         Tile tile = go.AddComponent<Tile>();
         tile.CreateTile(tileState);
-        
         return go;
     }
+
 }
