@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TunnelDirector : MonoBehaviour
+public class TunnelDirector : Director
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Construct(IBuilder builder)
     {
-        
-    }
+        for (int x = 0; x < 10; x++)
+        {
+            for (int y = 0; y < 10; y++)
+            {
+                if (x == 5 || y == 5)
+                {
+                    builder.BuildFloor(x, y);
+                }
+                else
+                {
+                    builder.BuildWall(x, y);
+                }
+            }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

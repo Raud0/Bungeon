@@ -1,18 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Person _activePerson;
+    private List<Person> _persons;
+    
+    public static event Action personMoved;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

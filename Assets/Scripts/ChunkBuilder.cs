@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChunkBuilder : MonoBehaviour
+public class ChunkBuilder : IBuilder
 {
-    // Start is called before the first frame update
-    void Start()
+    private Chunk _chunk;
+    public IntrinsicTileState WallState;
+    public IntrinsicTileState FloorState;
+    
+    public void BuildWall(int x, int y)
     {
-        
+        _chunk.AddTile(new Vector2Int(x, y), WallState);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void BuildFloor(int x, int y)
     {
-        
+        _chunk.AddTile(new Vector2Int(x, y), FloorState);
+    }
+
+    public Chunk GetResult()
+    {
+        return _chunk;
     }
 }

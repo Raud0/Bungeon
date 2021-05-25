@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private IntrinsicTileState _tileState;
+    public void CreateTile(IntrinsicTileState tileState)
     {
-        
+        _tileState = tileState;
+
+        if (_tileState.walkable)
+        {
+            gameObject.AddComponent<Collider2D>();
+        }
+
+        SpriteRenderer spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+        spriteRenderer.sprite = _tileState.sprite;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool IsWalkable()
     {
-        
+        return _tileState.walkable;
     }
 }

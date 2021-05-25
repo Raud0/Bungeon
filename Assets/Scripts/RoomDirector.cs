@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomDirector : MonoBehaviour
+public class RoomDirector : Director
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Construct(IBuilder builder)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for (int x = 0; x < 10; x++)
+        {
+            for (int y = 0; y < 10; y++)
+            {
+                builder.BuildFloor(x, y);
+            }
+        }
     }
 }
