@@ -11,6 +11,10 @@ class ChunkLoader {
 + void HandlePlayerMoved(Vector3 position)
 }
 
+abstract Director {
++ Construct(Builder builder)
+}
+
 class RoomDirector {
 + Construct(Builder builder)
 }
@@ -74,6 +78,8 @@ ChunkLoader --> RoomDirector
 ChunkLoader --> TunnelDirector
 TunnelDirector --> IBuilder
 RoomDirector --> IBuilder
+Director --|> RoomDirector
+Director --|> TunnelDirector
 IBuilder <|-- ChunkBuilder
 Chunk ..> ChunkBuilder
 ChunkLoader o-- Chunk

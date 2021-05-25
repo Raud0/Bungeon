@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="350583a6-74a4-4ee0-bf45-264ee89444f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Other.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Other/builder.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Other/builder.puml.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bungeon/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,5 +104,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
