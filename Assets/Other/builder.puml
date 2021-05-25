@@ -11,10 +11,14 @@ class ChunkLoader {
 + void HandlePlayerMoved(Vector3 position)
 }
 
-class Director {
-+ ConstructRoom(Builder builder)
-+ ConstructTunnel(Builder builder)
+class RoomDirector {
++ Construct(Builder builder)
 }
+
+class TunnelDirector {
++ Construct(Builder builder)
+}
+
 
 interface IBuilder {
 + BuildWall(int x, int y)
@@ -66,8 +70,10 @@ class Movement {
 'Lines
 Movement --> Person
 Movement --> ChunkLoader
-ChunkLoader --> Director
-Director --> IBuilder
+ChunkLoader --> RoomDirector
+ChunkLoader --> TunnelDirector
+TunnelDirector --> IBuilder
+RoomDirector --> IBuilder
 IBuilder <|-- ChunkBuilder
 Chunk ..> ChunkBuilder
 ChunkLoader o-- Chunk
