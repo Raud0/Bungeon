@@ -3,6 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="350583a6-74a4-4ee0-bf45-264ee89444f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bungeon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChunkBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChunkLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Director.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Director.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TileFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TileFactory.cs" afterDir="false" />
+    </list>
+    <list id="de3d3337-44af-4877-a91d-00ca086663d6" name="Toomas Tamm's changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Director.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Director.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IntrinsicTileState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IntrinsicTileState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Person.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Person.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RoomDirector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RoomDirector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TunnelDirector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TunnelDirector.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,14 +33,36 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Other.meta" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Builder.cs" />
       <option value="$PROJECT_DIR$/.gitignore" />
       <option value="$PROJECT_DIR$/Assets/Other/builder.puml" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Test.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/TileFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ChunkBuilder.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Director.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/RoomDirector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/TunnelDirector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Person.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ChunkLoader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Movement.cs" />
     </changedPaths>
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/Assets/Scripts/Director.cs">
+      <ranges>
+        <range start1="4" end1="5" start2="4" end2="5" changelist="de3d3337-44af-4877-a91d-00ca086663d6" />
+        <range start1="6" end1="17" start2="6" end2="7" changelist="350583a6-74a4-4ee0-bf45-264ee89444f5" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectId" id="1sU3eKRlniMcnexkadjkr1VBNbv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -42,7 +78,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.other" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">

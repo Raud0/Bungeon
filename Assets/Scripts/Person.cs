@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Person : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool Walk(Vector3 direction)
     {
-        
+        if (!IsPositionWalkable(transform.position + direction))
+            return false;
+
+        return Move(direction);
     }
 
-    // Update is called once per frame
-    void Update()
+    private bool IsPositionWalkable(Vector3 pos)
     {
-        
+        return true;
     }
+
+    private bool Move(Vector3 direction)
+    {
+        Vector3 from = transform.position;
+        Vector3 to = from + direction;
+        transform.position = to;
+
+        return true;
+    }    
 }

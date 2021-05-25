@@ -1,18 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TileFactory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject CreateTile(IntrinsicTileState tileState, Vector2Int vector)
     {
+        GameObject go = new GameObject();
+        go.AddComponent<Tile>();
+        go.AddComponent<SpriteRenderer>();
+        go.transform.position = new Vector3(vector.x, vector.y, 0);
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return go;
     }
 }

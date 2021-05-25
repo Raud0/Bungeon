@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TunnelDirector : MonoBehaviour
+public class TunnelDirector : Director
 {
-    // Start is called before the first frame update
-    void Start()
+    public override Chunk Construct(IBuilder builder)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        throw new System.NotImplementedException();
     }
 }
